@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: commercial-store-cm
+data:
+  DB_HOST: "commercial-store-postgresql"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB: "liorlevi"
+  POSTGRES_USER: "postgres"
+  POSTGRES_PASSWORD: "develeap"
+  LOG_LEVEL: "debug"

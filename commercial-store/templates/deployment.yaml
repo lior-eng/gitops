@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  labels:
+    {{- toYaml .Values.deployment.labels | nindent 4 }}
+spec:
+  replicas: 2
+  selector: 
+    matchLabels:
+      {{- toYaml .Values.deployment.selector | nindent 8 }}
+  template:
+    metadata:
+      labels:
+        {{- toYaml .Values.deployment.labels | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.containers }}
+        image: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.15
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        envFrom:
+          - configMapRef:
+              name: commercial-store-cm
+        ports:
+        - containerPort: 5000

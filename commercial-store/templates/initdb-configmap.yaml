@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: initdb-script
+data:
+  init-db.sql: |-
+    {{ .Files.Get "files/init-db.sql" | nindent 8 }}
