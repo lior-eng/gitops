@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: {{ .Values.deployment.containers }}
-        image: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.15
+        image: {{ .Values.deployment.image }}
+        # command: ["sleep", "3600"]
         resources:
           requests:
             memory: "64Mi"
@@ -27,5 +28,12 @@ spec:
         envFrom:
           - configMapRef:
               name: commercial-store-cm
+        env:
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgresql-secret
+                # key: postgres-user-password
+                key: postgres-password
         ports:
         - containerPort: 5000

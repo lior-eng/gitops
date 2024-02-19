@@ -1,5 +1,6 @@
 deployment:
   name: commercial-store
+  image: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.15
   labels:
     app: commercial-store
   containers: commercial-store
@@ -24,12 +25,20 @@ postgresql:
     database: liorlevi
     existingSecret: postgresql-secret
     secretKeys:
-      adminPasswordKey: postgres-admin-password
+    #   adminPasswordKey: ""
       userPasswordKey: postgres-user-password
-      replicationPasswordKey: postgres-repl-password
+    #   replicationPasswordKey: ""
 
-  persistence:
-    enabled: true
   primary:
     initdb:
       scriptsConfigMap: initdb-script
+    persistence:
+      enabled: true
+
+configmap:
+  data:
+    db_host: "commercial-store-postgresql"
+    postgres_port: "5432"
+    postgres_db: "liorlevi"
+    postgres_user: "postgres"
+    log_level: "debug"
