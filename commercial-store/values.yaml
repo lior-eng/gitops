@@ -20,6 +20,8 @@ service:
 postgresql:
   architecture: standalone
   auth:
+    username: postgres
+    database: liorlevi
     existingSecret: postgresql-secret
     secretKeys:
       adminPasswordKey: postgres-admin-password
