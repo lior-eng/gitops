@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-app
+  name: cert-app
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: git@github.com:lior-eng/gitops.git
     targetRevision: HEAD
-    path: ingress-controller
+    path: apps/cert-manager
     helm:
       values: |
         installCRDs: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: ingress-ns
+    namespace: cert-manager
   syncPolicy:
     automated:
       prune: true

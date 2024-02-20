@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: git@github.com:lior-eng/gitops.git
-    path: commercial-store
+    path: apps/commercial-store
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
