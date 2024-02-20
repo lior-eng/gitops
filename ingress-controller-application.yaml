@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://kubernetes.github.io/ingress-nginx
-    targetRevision: 4.9.0
+    repoURL: git@github.com:lior-eng/gitops.git
+    targetRevision: HEAD
     path: ingress-controller
     helm:
       values: |
