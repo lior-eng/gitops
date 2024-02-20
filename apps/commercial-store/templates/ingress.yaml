@@ -18,6 +18,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: demo-crm-lb
+            name: commercial-store
             port:
               number: 80
