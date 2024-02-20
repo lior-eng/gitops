@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.jetstack.io
-    targetRevision: 1.13.3
-    chart: cert-manager
+    repoURL: git@github.com:lior-eng/gitops.git
+    targetRevision: HEAD
+    path: cert-manager
     helm:
       values: |
         installCRDs: true
