@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: efk-app
+  namespace: efk-ns
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:lior-eng/gitops.git
+    targetRevision: HEAD
+    path: apps/efk
+    helm:
+      values: |
+        installCRDs: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: efk-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
