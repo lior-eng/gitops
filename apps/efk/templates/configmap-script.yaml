@@ -20,32 +20,17 @@ data:
     function import_objects {
         echo ">>>>>>>>>>>>>>>> Importing objects... <<<<<<<<<<<<<<<<"
 
-        # Execute curl and direct output and errors to files
-        curl -X POST "http://${KIBANA_HOST}:${KIBANA_PORT}/api/saved_objects/_import" \
-            -H "Content-Type: multipart/form-data" \
-            -H "kbn-xsrf: true" \
-            -F "file=@/kibana/file.ndjson" \
-            -o /tmp/curl-response.txt -w "%{http_code}" \
-            2>/tmp/curl-error.log > /tmp/curl-http-code.txt
-
-        # Read HTTP status code from the file
-        HTTP_CODE=$(cat /tmp/curl-http-code.txt)
-        OUTPUT=$(cat /tmp/curl-response.txt)
-
-        # Check if the operation was successful by looking for "success":true in the response body
+        OUTPUT=$(curl -X POST http://${KIBANA_HOST}:${KIBANA_PORT}/api/saved_objects/_import -H "Content-Type: multipart/form-data" -H "kbn-xsrf: true" -F "file=@/kibana/file.ndjson")
         SUCCESS=$(echo ${OUTPUT} | grep -o '"success":true' | wc -l)
-
-        if [[ ${SUCCESS} -eq 1 ]]; then
+        
+        if [[ ${SUCCESS} == "1" ]]; then
           printf "\n>>>>>>>>>>>>>> Imported objects successfully! <<<<<<<<<<<<<<<<<<<<<<<\n"
         else
           printf "\n>>>>>>>>>>>>>> Failure while importing objects! <<<<<<<<<<<<<<<<<<<<<\n"
-          echo "HTTP Status Code: ${HTTP_CODE}"
-          echo "Response Body:"
-          cat /tmp/curl-response.txt
-          echo "Curl Error (if any):"
-          cat /tmp/curl-error.log
           exit 1
         fi
+
+        echo "${OUTPUT}"
     }
 
     echo ">>>>>>>>>>>>>>>> Running ${0}... <<<<<<<<<<<<<<<<"
