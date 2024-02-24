@@ -22,5 +22,5 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      - ServerSideApply=true
+      - ServerSideApply=true # Fix to long crd sync --> "Too long: must have at most 262144 bytes"
       - CreateNamespace=true

@@ -39,11 +39,10 @@ grafana:
   # Dashboards as ConfigMaps
   dashboards:
     default:
-      some-dashboard:
+      commercial-store:
         gnetId: 10000  # Replace with your dashboard ID
         revision: 1
         datasource: Prometheus
-        # file: app-and-db-commercial-store.json
         json: |
           {
             "annotations": {
