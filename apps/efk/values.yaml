@@ -2,6 +2,11 @@ elasticsearch:
   global:
     kibanaEnabled: true
 
+  kibana:
+    service:
+      port:
+        http: 5601
+
 
 
 
