@@ -2,10 +2,10 @@ elasticsearch:
   global:
     kibanaEnabled: true
 
-  # kibana:
-  #   service:
-  #     port:
-  #       http: 5601
+  kibana:
+    service:
+      port:
+        http: 5601
 
 fluent-bit:
   logLevel: info
@@ -61,7 +61,7 @@ fluent-bit:
           tls Off
           tls.verify Off
           Logstash_Format On
-          Logstash_Prefix commercial
+          Logstash_Prefix storelogs
           Retry_Limit False
           Suppress_Type_Name On
 
