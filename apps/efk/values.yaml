@@ -8,9 +8,6 @@ elasticsearch:
         http: 5601
 
 
-
-
-
 fluent-bit:
   logLevel: info
   config:
