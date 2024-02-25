@@ -11,11 +11,6 @@
 elasticsearch:
   # Elasticsearch values
   global:
-    elasticsearch:
-      service:
-        name: elasticsearch
-        ports:
-          restAPI: 9200
     kibanaEnabled: true
 
   master:
