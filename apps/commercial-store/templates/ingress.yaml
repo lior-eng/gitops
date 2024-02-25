@@ -11,7 +11,7 @@ spec:
     - commercial-store.ddns.net
     secretName: letsencrypt
   rules:
-  - host: commercial-store.ddns.net
+  - host: commercial-sto.ddns.net #commercial-store.ddns.net
     http:
       paths:
       - path: /
