@@ -2,10 +2,10 @@ elasticsearch:
   global:
     kibanaEnabled: true
 
-  kibana:
-    service:
-      port:
-        http: 5601
+  # kibana:
+  #   service:
+  #     port:
+  #       http: 5601
 
 fluent-bit:
   logLevel: info
