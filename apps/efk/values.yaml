@@ -1,31 +1,11 @@
-# elasticsearch:
-#   global:
-#     kibanaEnabled: true
+elasticsearch:
+  global:
+    kibanaEnabled: true
 
   # kibana:
   #   service:
   #     port:
   #       http: 5601
-
-
-elasticsearch:
-  # Elasticsearch values
-  global:
-    kibanaEnabled: true
-
-  master:
-    masterOnly: false
-    replicaCount: 1
-  data:
-    replicaCount: 0
-  coordinating:
-    replicaCount: 0
-  ingest:
-    replicaCount: 0
-
-  sysctlImage:
-    enabled: true
-
 
 fluent-bit:
   logLevel: info
