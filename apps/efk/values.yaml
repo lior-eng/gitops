@@ -62,7 +62,7 @@ fluent-bit:
           tls Off
           tls.verify Off
           Logstash_Format On
-          Logstash_Prefix storelogs
+          Logstash_Prefix commercial
           Retry_Limit False
           Suppress_Type_Name On
 
