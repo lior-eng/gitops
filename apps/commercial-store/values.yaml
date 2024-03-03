@@ -1,6 +1,6 @@
 deployment:
   name: commercial-store
-  image: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.34
+  image: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.35
   labels:
     app: commercial-store
   containers: commercial-store
