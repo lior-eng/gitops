@@ -1,12 +1,11 @@
 deployment:
   name: commercial-store
-  image: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.35
+  image: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.36
   labels:
     app: commercial-store
   containers: commercial-store
   selector:
     app: commercial-store
-    
 service:
   name: commercial-store
   labels:
@@ -17,7 +16,6 @@ service:
   ports:
     port: 80
     targetPort: 5000
-
 postgresql:
   architecture: standalone
   auth:
@@ -31,7 +29,6 @@ postgresql:
       scriptsConfigMap: initdb-script
     persistence:
       enabled: true
-      
 configmap:
   data:
     db_host: commercial-store-postgresql
