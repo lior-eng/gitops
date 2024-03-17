@@ -6,7 +6,6 @@ deployment:
   containers: commercial-store
   selector:
     app: commercial-store
-    
 service:
   name: commercial-store
   labels:
@@ -17,7 +16,6 @@ service:
   ports:
     port: 80
     targetPort: 5000
-
 postgresql:
   architecture: standalone
   auth:
@@ -31,7 +29,6 @@ postgresql:
       scriptsConfigMap: initdb-script
     persistence:
       enabled: true
-      
 configmap:
   data:
     db_host: commercial-store-postgresql
