@@ -20,6 +20,9 @@ metadata:
 spec:
   project: default
   source:
+    helm:
+      valueFiles:
+      - apps/commercial-store/values.yaml
     repoURL: git@github.com:lior-eng/gitops.git
     path: apps/commercial-store
     targetRevision: HEAD
