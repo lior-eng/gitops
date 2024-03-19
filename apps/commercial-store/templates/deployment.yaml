@@ -18,7 +18,7 @@ spec:
       - name: {{ .Values.deployment.containers }}
         # image: {{ .Values.deployment.image }}
         image: "{{ .Values.deployment.image.name }}:{{ .Values.deployment.image.tag }}"
-        imagePullPolicy: Always
+        # imagePullPolicy: Always
         # command: ["sleep", "3600"]
         resources:
           requests:
