@@ -1,5 +1,0 @@
-helm:
-  parameters:
-  - name: deployment.image
-    value: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.39
-    forcestring: true
