@@ -3,7 +3,7 @@ deployment:
   # image: "644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.38"
   image:
     name: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
-    tag: v1.0.37 #v1.0.38
+    tag: v1.0.38
   labels:
     app: commercial-store
   containers: commercial-store
