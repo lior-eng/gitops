@@ -12,7 +12,7 @@ metadata:
     argocd-image-updater.argoproj.io/lior-levi-proj.update-strategy: latest
     argocd-image-updater.argoproj.io/lior-levi-proj.force-update: "true"
     # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-name: deployment.image.name
-    argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-tag: deployment.image.tag
+    # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-tag: image.tag
     # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-spec: image.tag
     # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-spec: "deployment.image"
     # argocd-image-updater.argoproj.io/write-back-target: kustomization
