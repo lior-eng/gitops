@@ -13,7 +13,7 @@ metadata:
     argocd-image-updater.argoproj.io/lior-levi-proj.force-update: "true"
     # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-name: lior-levi-proj.image.name
     # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-tag: lior-levi-proj.image.tag
-    argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-spec: image.tag
+    argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-spec: lior-levi-proj.image.tag
 spec:
   project: default
   source:
