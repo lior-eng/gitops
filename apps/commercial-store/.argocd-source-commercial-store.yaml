@@ -3,6 +3,6 @@ helm:
   - name: image.name
     value: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
     forcestring: true
-  - name: deployment.image.tag
-    value: v1.0.43
+  - name: image.tag
+    value: v1.0.44
     forcestring: true
