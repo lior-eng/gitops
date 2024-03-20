@@ -8,10 +8,10 @@ spec:
   ingressClassName: "nginx"
   tls:
   - hosts:
-    - commercial-sto.ddns.net #commercial-store.ddns.net
+    - commercial-st.ddns.net #commercial-store.ddns.net
     secretName: letsencrypt
   rules:
-  - host: commercial-sto.ddns.net #commercial-store.ddns.net
+  - host: commercial-st.ddns.net #commercial-store.ddns.net
     http:
       paths:
       - path: /
