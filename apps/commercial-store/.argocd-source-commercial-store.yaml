@@ -1,8 +1,16 @@
 helm:
   parameters:
+<<<<<<< HEAD
   - name: image.repository
     value: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
     forcestring: false
   - name: image.tag
     value: v1.0.49
+=======
+  - name: image.name
+    value: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
+    forcestring: true
+  - name: image.tag
+    value: v1.0.50
+>>>>>>> 7e30730dc36aab69d9c5464c6e63e16ef3b6e75d
     forcestring: true
