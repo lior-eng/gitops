@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd-image-updater.argoproj.io/image-list: "lior-levi-proj=644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:semver:~1.0" # :semver:~1.0 "semver", update to highest version
+    argocd-image-updater.argoproj.io/image-list: "lior-levi-proj=644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:*" # :semver:~1.0 "semver", update to highest version
     argocd-image-updater.argoproj.io/write-back-method: git # commit changes to Git repo
     argocd-image-updater.argoproj.io/git-branch: main
     argocd-image-updater.argoproj.io/lior-levi-proj.update-strategy: latest
