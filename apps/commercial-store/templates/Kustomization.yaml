@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: commercial-store
+  newName: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
+  newTag: v1.0.38
+resources:
+  - deployment.yaml
