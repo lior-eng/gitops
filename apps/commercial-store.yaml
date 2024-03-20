@@ -23,12 +23,12 @@ spec:
     # helm:
     #   valueFiles:
     #   - values.yaml
-    # helm:
-    #   parameters:
-    #   - name: image.name
-    #     value: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
-    #   - name: image.tag
-    #     value: v1.0.38
+    helm:
+      parameters:
+      - name: image.repository
+        value: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
+      - name: image.tag
+        value: v1.0.38
 
     repoURL: git@github.com:lior-eng/gitops.git
     path: apps/commercial-store
