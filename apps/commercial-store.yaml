@@ -11,12 +11,8 @@ metadata:
     argocd-image-updater.argoproj.io/git-branch: main
     argocd-image-updater.argoproj.io/lior-levi-proj.update-strategy: latest
     argocd-image-updater.argoproj.io/lior-levi-proj.force-update: "true"
-    # argocd-image-updater.argoproj.io/write-back-target: kustomization
     argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-name: deployment.image.name
     argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-tag: deployment.image.tag
-    # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-spec: image.tag
-    # argocd-image-updater.argoproj.io/lior-levi-proj.helm.image-spec: "deployment.image"
-    # argocd-image-updater.argoproj.io/write-back-target: kustomization
 
 spec:
   project: default
@@ -24,13 +20,6 @@ spec:
     # helm:
     #   valueFiles:
     #   - values.yaml
-    # helm:
-    #   parameters:
-    #   - name: image.repository
-    #     value: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
-    #   - name: image.tag
-    #     value: v1.0.38
-
     repoURL: git@github.com:lior-eng/gitops.git
     path: apps/commercial-store
     targetRevision: HEAD
