@@ -1,1 +1,4 @@
 .DS_Store
+commercial-store.yaml
+apps/commercial-store/.argocd-source-commercial-store.yaml
+apps/commercial-store/values.yaml
