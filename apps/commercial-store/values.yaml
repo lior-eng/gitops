@@ -1,0 +1,41 @@
+deployment:
+  name: commercial-store
+  # image: "644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj:v1.0.38"
+  image:
+    name: 644435390668.dkr.ecr.us-east-1.amazonaws.com/lior-levi-proj
+    tag: v1.0.38
+  labels:
+    app: commercial-store
+  containers: commercial-store
+  selector:
+    app: commercial-store
+service:
+  name: commercial-store
+  labels:
+    app: commercial-store
+  selector:
+    app: commercial-store
+  type: ClusterIP
+  ports:
+    port: 80
+    targetPort: 5000
+postgresql:
+  architecture: standalone
+  auth:
+    username: postgres
+    database: liorlevi
+    existingSecret: postgresql-secret
+    secretKeys:
+      userPasswordKey: postgres-user-password
+  primary:
+    initdb:
+      scriptsConfigMap: initdb-script
+    persistence:
+      enabled: true
+configmap:
+  data:
+    db_host: commercial-store-postgresql
+    postgres_port: '5432'
+    postgres_db: liorlevi
+    postgres_user: postgres
+    log_level: debug
